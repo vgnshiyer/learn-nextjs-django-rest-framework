@@ -1,2 +1,2 @@
 # learn-nextjs
-Learning next-js
+Learning next-js.
