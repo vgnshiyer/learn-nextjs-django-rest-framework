@@ -19,5 +19,10 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # snippets
     path('', include('snippets.urls')),
+
+    # auth
+    path('auth/', include('rest_framework.urls'))
 ]
