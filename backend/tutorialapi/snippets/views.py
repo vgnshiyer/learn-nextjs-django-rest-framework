@@ -52,15 +52,21 @@ from snippets.serializers import SnippetSerializer
 
 
 #### Version 3 (mixins) ####
-class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+# class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.GenericAPIView):
+#     queryset = Snippet.objects.all()
+#     serializer_class = SnippetSerializer
+#
+#     def get(self, request: Request, *args, **kwargs):
+#         return self.list(request, *args, **kwargs)
+#
+#     def post(self, request: Request, *args, **kwargs):
+#         return self.create(request, *args, **kwargs)
+
+
+#### Version 4 (generic class based views) ####
+class SnippetList(generics.ListCreateAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
-
-    def get(self, request: Request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    def post(self, request: Request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
 
 
 #### Version 1 (function based views) ####
@@ -121,15 +127,21 @@ class SnippetList(mixins.ListModelMixin, mixins.CreateModelMixin, generics.Gener
 
 
 #### Version 3 (mixins) ####
-class SnippetDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+# class SnippetDetail(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.DestroyModelMixin, generics.GenericAPIView):
+#     queryset = Snippet.objects.all()
+#     serializer_class = SnippetSerializer
+#
+#     def get(self, request: Request, *args, **kwargs):
+#         return self.retrieve(request, *args, **kwargs)
+#
+#     def put(self, request: Request, *args, **kwargs):
+#         return self.update(request, *args, **kwargs)
+#
+#     def delete(self, request: Request, *args, **kwargs):
+#         return self.destroy(request, *args, **kwargs)
+
+
+#### Version 4 (generic class based views) ####
+class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
-
-    def get(self, request: Request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
-
-    def put(self, request: Request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def delete(self, request: Request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
