@@ -24,3 +24,4 @@
 - https://mahieyin-rahmun.medium.com/how-to-configure-social-authentication-in-a-next-js-next-auth-django-rest-framework-application-cb4c82be137
 - https://stackoverflow.com/questions/69068495/how-to-get-the-provider-access-token-in-next-auth
 - https://medium.com/@rishipardeshi/authentication-with-nextjs-14-and-next-auth-b10fe7eb6407
+- https://www.django-rest-framework.org/tutorial/quickstart/
